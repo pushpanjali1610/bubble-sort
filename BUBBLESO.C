@@ -1,17 +1,20 @@
 #include<stdio.h>
 #include<conio.h>
-void main()
+#include<stdlib.h>
+int main()
 {
-int a[100],n,i,j,temp;
-clrscr();
-printf("how many elements:");
-scanf("%d",&n);
-printf("enter the element of array:");
-for(i=0;i<=n-1;i++)
+long long int n;
+printf("Enter the number of elements of array \n");
+scanf("%lld",&n);
+long long int a[n],i,j,temp;
+printf("enter the element of array\n");
+for(i=0;i<n;i++)
 {
-scanf("%d",a[i]);
+scanf("%lld",&a[i]);
 }
-for(j=0;j<=n-1;j++)
+for(i=0;i<n-1;i++)
+{
+for(j=0;j<n-i-1;j++)
 {
 if(a[j]>a[j+1])
 {
@@ -20,10 +23,11 @@ a[j]=a[j+1];
 a[j+1]=temp;
 }
 }
+}
 printf("element of array after sorting are:\n");
 for(i=0;i<=n-1;i++)
 {
-printf("%d\n",a[i]);
+printf("%lld\n",a[i]);
 }
-getch();
+return 0;
 }
